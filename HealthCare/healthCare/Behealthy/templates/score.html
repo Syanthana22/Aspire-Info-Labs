@@ -1,0 +1,326 @@
+{% include 'nav.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SF-36 Questionnaire</title>
+   <style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  margin-bottom: 15px;
+}
+
+.question-text {
+  font-weight: bold;
+}
+
+.answer-options {
+  margin-left: 20px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+}
+
+input[type="submit"] {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+</style>
+
+</head>
+<body>
+    <h1>SF-36 Questionnaire</h1>
+    <form>
+        <p>1. In general, would you say your health is:</p>
+        <select name="q1">
+            <option value="+1">Excellent(+1)</option>
+            <option value="+2">Very good(+2)</option>
+            <option value="+3">good(+3)</option>
+            <option value="+4">bad(+4)</option>
+        </select>
+        
+        <p>2. Compared to one year ago, how would you rate your health in general now:</p>
+        <select name="q2">
+            <option value="+1">Much better now than one year ago(+1)</option>
+            <option value="+2">better now than one year ago(+2)</option>
+            <option value="+3">some what better now than one year ago(+3)</option>
+            <option value="+4">worse than one year ago(+4)</option>
+            
+        </select>
+         <p>3.Vigorous activities, such as running, lifting heavy objects, participating in strenuous sports.</p>
+        <select name="q3">
+            <option value="+1">limited a lot(+1)</option>
+            <option value="+2">limited a little(+2)</option>
+            <option value="+3">limited very less(+3)</option>
+            <option value="+4">not limited(+4)</option>
+            
+        </select>
+       <p>4.Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf.</p>
+        <select name="q4">
+            <option value="+1">limited a lot(+1)</option>
+            <option value="+2">limited a little(+2)</option>
+            <option value="+3">limited very less(+3)</option>
+            <option value="+4">not limited(+4)</option>
+            
+        </select>
+       <p>5 .Lifting or carrying groceries</p>
+        <select name="q5">
+            <option value="+1">limited a lot(+1)</option>
+            <option value="+2">limited a little(+2)</option>
+            <option value="+3">limited very less(+3)</option>
+            <option value="+4">not limited(+4)</option>
+            
+        </select>
+        <p>6.Climbing several flights of stairs.</p>
+        <select name="q6">
+            <option value="+1">limited a lot(+1)</option>
+            <option value="+2">limited a little(+2)</option>
+            <option value="+3">limited very less(+3)</option>
+            <option value="+4">not limited(+4)</option>
+            
+        </select> 
+        <p>7.Climbing one flight of stairs..</p>
+        <select name="q7">
+            <option value="+1">limited a lot(+1)</option>
+            <option value="+2">limited a little(+2)</option>
+            <option value="+3">limited very less(+3)</option>
+            <option value="+4">not limited(+4)</option>
+            
+        </select>
+        <p>8.Bending, kneeling, or stooping</p>
+        <select name="q8">
+            <option value="+1">limited a lot(+1)</option>
+            <option value="+2">limited a little(+2)</option>
+            <option value="+3">limited very less(+3)</option>
+            <option value="+4">not limited(+4)</option>
+            
+        </select>
+
+        <p>9.Walking one block</p>
+        <select name="q9">
+            <option value="+1">limited a lot(+1)</option>
+            <option value="+2">limited a little(+2)</option>
+            <option value="+3">limited very less(+3)</option>
+            <option value="+4">not limited(+4)</option>
+            
+        </select>
+     <p>10.Bathing or dressing yourself.</p>
+        <select name="q10">
+            <option value="+1">limited a lot(+1)</option>
+            <option value="+2">limited a little(+2)</option>
+            <option value="+3">limited very less(+3)</option>
+            <option value="+4">not limited(+4)</option>
+            
+        </select>
+      <p>11.Cut down the amount of time you spent on work or other activities</p>
+        <select name="q11">
+            <option value="+1">yes(+1)</option>
+            <option value="+2">no(+2)</option>
+            
+        </select>
+      <p>12.Accomplished less than you would like</p>
+        <select name="q12">
+            <option value="+1">yes(+1)</option>
+            <option value="+2">no(+2)</option>
+            
+        </select>
+     <p>13.Were limited in the kind of work or other activities.</p>
+        <select name="q13">
+            <option value="+1">yes(+1)</option>
+            <option value="+2">no(+2)</option>
+            
+        </select>
+    
+     <p>14.Had difficulty performing the work or other activities (for example, it took extra effort).</p>
+        <select name="q14">
+            <option value="+1">yes(+1)</option>
+            <option value="+2">no(+2)</option>
+            
+        </select>
+     
+   <p>15.Cut down the amount of time you spent on work or other activities.</p>
+        <select name="q15">
+            <option value="+1">yes(+1)</option>
+            <option value="+2">no(+2)</option>
+            
+        </select>
+     <p>16.Accomplished less than you would like.</p>
+        <select name="q16">
+            <option value="+1">yes(+1)</option>
+            <option value="+2">no(+2)</option>
+            
+        </select>
+     <p>17.Didn't do work or other activities as carefully as usual.</p>
+        <select name="q17">
+            <option value="+1">yes(+1)</option>
+            <option value="+2">no(+2)</option>
+            
+        </select>
+     
+     
+      
+
+
+
+        <!-- ... repeat for other questions ... -->
+
+        <p>33. I seem to get sick a little easier than other people:</p>
+        <select name="q33">
+            <option value="+1">Definitely true(+1)</option>
+            <option value="+2">mostly true(+2)</option>
+            <option value="+3">dont know(+3)</option>
+            <option value="+4">mostly false(+4)</option>
+            
+        </select>
+
+        <p>34. I am as healthy as anybody I know:</p>
+        <select name="q34">
+            <option value="+1">Definitely true(+1)</option>
+            <option value="+2">mostly true(+2)</option>
+            <option value="+3">dont know(+3)</option>
+            <option value="+4">mostly false(+4)</option>
+        </select>
+       <p>I expect my health to get worse</p>
+        <select name="q34">
+            <option value="+1">Definitely true(+1)</option>
+            <option value="+2">mostly true(+2)</option>
+            <option value="+3">dont know(+3)</option>
+            <option value="+4">mostly false(+4)</option>
+        </select>
+       <p>My health is excellent</p>
+        <select name="q34">
+            <option value="+1">Definitely true(+1)</option>
+            <option value="+2">mostly true(+2)</option>
+            <option value="+3">dont know(+3)</option>
+            <option value="+4">mostly false(+4)</option>
+        </select>
+
+      
+
+        <input type="submit" value="Submit">
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Define the scoring values for each option
+        const scoringValues = {
+            "+1": 1,
+            "+2": 2,
+            "+3": 3,
+            "+4": 4
+        };
+
+        let physicalFunctioning = 0;
+        let socialFunctioning = 0;
+        let pain = 0;
+        let generalHealth = 0;
+        
+
+        // Loop through each select element and calculate the scores
+        const selectElements = form.querySelectorAll("select");
+        selectElements.forEach(select => {
+            const selectedValue = select.value;
+            const questionName = select.getAttribute("name");
+            const score = scoringValues[selectedValue];
+
+            // Assign scores based on question names
+            switch (questionName) {
+                case "q3":
+                case "q4":
+                case "q5":
+                case "q6":
+                case "q7":
+                case "q8":
+                case "q9":
+                case "q10":
+                    physicalFunctioning += score;
+                    break;
+               case "q11":
+               case "q12":
+               case "q13":
+                    socialFunctioning+=score;
+                    break;
+               case "q14":
+               case "q15":
+               case "q16":
+                    generalHealth +=score;
+                    break;
+               case "q33":
+               case "q34":
+               case "q35":
+               case "q36":
+                    pain+=score;
+
+                // Add cases for other question names
+
+                default:
+                    break;
+            }
+        });
+
+        // Calculate the scores for socialFunctioning, pain, generalHealth, and energy
+        // You should add more cases for the respective question names
+
+        // Display the scores on the website
+        const resultContainer = document.createElement("div");
+        resultContainer.className = "result-container";
+
+        resultContainer.innerHTML = `
+            <h2>Score Results</h2>
+            <p>Physical Functioning: ${physicalFunctioning}</p>
+            <p>Social Functioning: ${socialFunctioning}</p>
+            <p>Pain: ${pain}</p>
+            <p>General Health: ${generalHealth}</p>
+            
+        `;
+
+        form.appendChild(resultContainer);
+    });
+});
+</script>
+
+    </form>
+
+</body>
+</html>

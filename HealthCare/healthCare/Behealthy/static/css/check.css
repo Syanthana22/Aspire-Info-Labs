@@ -1,0 +1,32 @@
+
+.notification-icon {
+    cursor: pointer;
+}
+
+/* Styles for the notification popup */
+.notification-popup {
+    position: fixed;
+    top: 20%;
+    right: 10%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    position: relative;
+    text-align: center; /* Center the contents */
+}
+
+/* Style for the close button */
+.close-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+a{
+    color:white;
+    margin-right: 2%;
+    text-decoration: none;
+}

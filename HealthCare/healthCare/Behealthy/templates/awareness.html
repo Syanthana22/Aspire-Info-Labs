@@ -1,0 +1,132 @@
+
+{% include 'nav.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventive Healthcare Awareness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .awareness-info {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .tip {
+            border-left: 3px solid #007BFF;
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+        .search-bar {
+            display: flex;
+            max-width: 400px;
+            margin-top: 10% ;
+            margin-left:30%;
+           
+        }
+        .search-input {
+            flex: 1;
+            padding: 8px;
+            font-size: 16px;
+        }
+        .search-button {
+            padding: 8px 15px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .search-results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" class="search-input" placeholder="search for the disease">
+        <button type="button" onclick="searchInfo()" class="search-button">Search</button>
+    </div>
+
+           <!-- Search Results -->
+        <div class="search-results" id="searchResults">
+            <!-- Search results will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        function searchInfo() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const tips = document.querySelectorAll('.tip');
+
+            let searchResults = '';
+            let resultsFound = false;
+
+            tips.forEach(tip => {
+                const tipContent = tip.innerText.toLowerCase();
+                if (tipContent.includes(searchInput)) {
+                    searchResults += `<div class="tip">${tip.innerHTML}</div>`;
+                    resultsFound = true;
+                }
+            });
+
+            const searchResultsDiv = document.getElementById('searchResults');
+            if (resultsFound) {
+                searchResultsDiv.innerHTML = searchResults;
+            } else {
+                searchResultsDiv.innerHTML = '<p>No results found for the given search terms.</p>';
+            }
+        }
+    </script>
+<div class="awareness-info">
+        <h1>Preventive Healthcare Awareness</h1>
+        <p>Welcome to our Preventive Healthcare Awareness . Here, we aim to provide you with valuable information and tips to improve your overall well-being through preventive measures.</p>
+
+        <h2>Why is Preventive Healthcare Important?</h2>
+        <p>Preventive healthcare plays a vital role in maintaining good health and preventing various illnesses before they become severe. By adopting healthy habits and regular screenings, you can reduce the risk of developing chronic conditions and improve your quality of life.</p>
+
+        <h2>Key Preventive Measures:</h2>
+        <div class="tip">
+            <h3>1. Balanced Diet</h3>
+            <p>Eating a well-balanced diet rich in fruits, vegetables, whole grains, and lean proteins can provide essential nutrients and support a healthy immune system.</p>
+        </div>
+
+        <div class="tip">
+            <h3>2. Regular Exercise</h3>
+            <p>Engaging in regular physical activity can improve cardiovascular health, boost mood, and help maintain a healthy weight.</p>
+        </div>
+
+        <div class="tip">
+            <h3>3. Vaccinations</h3>
+            <p>Keeping up-to-date with vaccinations can protect you from infectious diseases and help prevent their spread.</p>
+        </div>
+
+        <div class="tip">
+            <h3>4. Routine Check-ups</h3>
+            <p>Regular visits to your healthcare provider can help detect early signs of health issues and ensure timely interventions.</p>
+        </div>
+
+        <div class="tip">
+            <h3>5. Mental Health</h3>
+            <p>Don't overlook your mental health. Practice stress-relief techniques and seek support if needed.</p>
+        </div>
+
+        <h2>Stay Informed</h2>
+        <p>Stay connected with our app to receive regular updates on preventive healthcare tips, news, and events in your area.</p>
+
+
+</body>
+</html>

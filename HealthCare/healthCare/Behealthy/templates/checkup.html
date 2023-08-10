@@ -1,0 +1,29 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static%}
+    <title>Checkup Reminder</title>
+    <meta charset="utf-8">
+      
+    <link rel="stylesheet" href="{% static 'css/check.css'  %}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="user_medical_profile">Sign up</a>
+        <div class="notification-icon" id="notificationIcon">
+            <i class="fas fa-bell"></i>
+        </div>
+    </nav>
+    <div class="notification-popup" id="notificationPopup">
+        <p id="notificationMessage">Reminder: You have a checkup on <span id="dueDate"></span>!</p>
+        <span id="closeIcon" class="close-icon"><i class="fas fa-times"></i></span>
+    </div>
+    <script type="text/javascript" src="{% static 'js/checkup.js' %}" ></script>   
+</body>
+</html>

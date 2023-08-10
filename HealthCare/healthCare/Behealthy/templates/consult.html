@@ -1,0 +1,233 @@
+{% include 'nav.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WhatsApp Message and Call</title>
+    <style>
+      body {
+        background-color: #e1f5fe;
+      }
+      h1 {
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+      .display {
+        display: flex;
+        padding: 20px;
+      }
+      .display .subdiv {
+        margin-left: 100px;
+      }
+      /* Your CSS styling here */
+      .my-button {
+        background-color: #3498db;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+      }
+      img {
+        border-radius: 50%;
+        border-style: 10px black;
+      }
+      /* Hover effect */
+      .my-button:hover {
+        background-color: #2980b9;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <center><h1>CONSULT OUR DOCTORS</h1></center>
+    <center>
+      <div class="display">
+        <div class="subdiv">
+          <h3>Neurologist</h3>
+          <img
+            src="data:image/jpeg;base64,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"
+            width="200"
+            height="200"
+          /><br />
+          <button id="WD1" class="my-button">
+            <i class="fab fa-whatsapp"></i>
+          </button>
+          <button id="PD1" class="my-button">
+            <i class="fa fa-phone"></i>
+          </button>
+        </div>
+        <div class="subdiv">
+          <h3>Cardiologist</h3>
+          <img
+            src="https://www.thehospitalsofprovidence.com/images/global/heart-month-2023/659x519_heart_doc-holding-min.png?sfvrsn=ba8966dc_2"
+            width="200"
+            height="200"
+          /><br />
+          <button id="WD2" class="my-button">
+            <i class="fab fa-whatsapp"></i>
+          </button>
+          <button id="PD2" class="my-button">
+            <i class="fa fa-phone"></i>
+          </button>
+        </div>
+        <div class="subdiv">
+          <h3>Dentist</h3>
+          <img
+            src="data:image/jpeg;base64,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"
+            width="200"
+            height="200"
+          /><br />
+          <button id="WD3" class="my-button">
+            <i class="fab fa-whatsapp"></i>
+          </button>
+          <button id="PD3" class="my-button">
+            <i class="fa fa-phone"></i>
+          </button>
+        </div>
+        <div class="subdiv">
+          <h3>Pediatrician</h3>
+          <img
+            src="https://engadoctor.com/blog/wp-content/uploads/2022/08/pediatrician-in-tirunelveli.jpg"
+            width="200"
+            height="200"
+          /><br />
+          <button id="WD4" class="my-button">
+            <i class="fab fa-whatsapp"></i>
+          </button>
+
+          <button id="PD4" class="my-button">
+            <i class="fa fa-phone"></i>
+          </button>
+        </div>
+      </div>
+    </center>
+
+    <script>
+      document
+        .getElementById("WD1")
+        .addEventListener("click", function () {
+          // Replace '1234567890' with the actual phone number you want to message
+          const phoneNumber = "+91 9392690626";
+
+          // Replace 'Hello%20world!' with the message you want to send
+          const message = "Hi";
+
+          // Create the WhatsApp message link
+          const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+          // Open the link in a new tab
+          window.open(whatsappLink, "_blank");
+        });
+
+      document
+        .getElementById("PD1")
+        .addEventListener("click", function () {
+          // Replace '1234567890' with the actual phone number you want to call
+          const phoneNumber = "+91 9392690626";
+
+          // Create the tel link
+          const telLink = `tel:${phoneNumber}`;
+
+          // Open the link to initiate the call
+          window.open(telLink);
+        });
+
+
+        document
+        .getElementById("WD2")
+        .addEventListener("click", function () {
+          // Replace '1234567890' with the actual phone number you want to message
+          const phoneNumber = "+91 6300301770";
+
+          // Replace 'Hello%20world!' with the message you want to send
+          const message = "Hi";
+
+          // Create the WhatsApp message link
+          const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+          // Open the link in a new tab
+          window.open(whatsappLink, "_blank");
+        });
+
+      document
+        .getElementById("PD2")
+        .addEventListener("click", function () {
+          // Replace '1234567890' with the actual phone number you want to call
+          const phoneNumber = "+91 6300301770";
+
+          // Create the tel link
+          const telLink = `tel:${phoneNumber}`;
+
+          // Open the link to initiate the call
+          window.open(telLink);
+        });
+        document
+        .getElementById("WD3")
+        .addEventListener("click", function () {
+          // Replace '1234567890' with the actual phone number you want to message
+          const phoneNumber = "+91 9347665827";
+
+          // Replace 'Hello%20world!' with the message you want to send
+          const message = "Hi";
+
+          // Create the WhatsApp message link
+          const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+          // Open the link in a new tab
+          window.open(whatsappLink, "_blank");
+        });
+
+      document
+        .getElementById("PD3")
+        .addEventListener("click", function () {
+          // Replace '1234567890' with the actual phone number you want to call
+          const phoneNumber = "+91 9347665827";
+
+          // Create the tel link
+          const telLink = `tel:${phoneNumber}`;
+
+          // Open the link to initiate the call
+          window.open(telLink);
+        });
+        document
+        .getElementById("WD4")
+        .addEventListener("click", function () {
+          // Replace '1234567890' with the actual phone number you want to message
+          const phoneNumber = "+91 6302211930";
+
+          // Replace 'Hello%20world!' with the message you want to send
+          const message = "Hi";
+
+          // Create the WhatsApp message link
+          const whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+
+          // Open the link in a new tab
+          window.open(whatsappLink, "_blank");
+        });
+
+      document
+        .getElementById("PD4")
+        .addEventListener("click", function () {
+          // Replace '1234567890' with the actual phone number you want to call
+          const phoneNumber = "+91 6302211930";
+
+          // Create the tel link
+          const telLink = `tel:${phoneNumber}`;
+
+          // Open the link to initiate the call
+          window.open(telLink);
+        });
+
+    </script>
+  </body>
+</html>

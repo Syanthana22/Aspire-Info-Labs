@@ -1,0 +1,81 @@
+{% include 'nav.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Information</title>
+    <style>
+       img {
+            display: block;
+            margin-left: auto;
+            margin-right: 0; /* Set margin-right to 0 to align image to the right */
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.9;
+            margin: 20px;
+            
+        }
+        h1 {
+            color: #007BFF;
+            font-size: 30px;
+        }
+        p {
+            margin-bottom: 15px;
+            
+        }
+        .emergency-info {
+            max-width: 1000px;
+            margin-top:5%;
+            
+        }
+        .emergency-contacts {
+            margin-top: 20px;
+           
+        }
+        .emergency-contacts h2 {
+            margin-bottom: 10px;
+           
+        }
+        .contact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .contact-item {
+            margin-bottom: 10px;
+        }
+        .contact-item strong {
+            display: inline-block;
+            width: 200px;
+        }
+         label {
+            display: block; /* Display labels on a new line */
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body style="font-size: 20px;text-align: center;">
+      <div class="emergency-info">
+        <h1>Emergency Helpline</h1>
+        <form>
+        <labelfor="locationInput">Enter Country:</label>
+        <input type="text" id="locationInput" name="location" placeholder="Type a country name">
+        <labelfor="locationInput">Enter Location:</label>
+        <input type="text" id="locationInput" name="location" placeholder="Type your location">
+   
+    </form style="font-size:20px;text-align: center;">
+        <div class="emergency-contacts">
+            <h1>Emergency Contacts</h1>
+            <ul class="contact-list">
+                <li class="contact-item"><strong>Helpline number:</strong> 108</li>
+                <li class="contact-item"><strong>Local Hospital:</strong> [Hospital Name]</li>
+                 </ul>
+        </div>
+
+     </div>
+</body>
+</html>

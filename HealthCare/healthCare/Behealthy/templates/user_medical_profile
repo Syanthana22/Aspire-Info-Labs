@@ -1,0 +1,226 @@
+{% include 'nav.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static%}
+    <title>User Registration</title>
+    <meta charset="utf-8">
+      
+    <link rel="stylesheet" href="{% static 'css/user_medical_Profile.css'  %}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div class="registration-container">
+        <h2 align="center">User Registration</h2>
+        <form id="registrationForm" class="registration-form" name="MedicalForm" method="POST" >
+            {% csrf_token %}
+            {{MedicalForm.as_p}}
+            
+            <!-- Personal Information -->
+            <h3>Personal Information</h3>
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="male" required>Male
+                <input type="radio" name="gender" value="female" required>Female
+                <input type="radio" name="gender" value="other" required>Other
+            </div>
+            
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="contactNumber">Contact Number:</label>
+                <input type="tel" id="contactNumber" name="contactNumber" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <!-- Address -->
+            <div class="form-group">
+                <label for="streetAddress">Street Address:</label>
+                <textarea id="streetAddress" name="streetAddress"
+                rows="4" cols="48"
+                placeholder="Please include these City, State/Province, ZIP/Postal Code, Country"
+                 required></textarea>
+            </div>
+            
+            <!-- Medical History -->
+            <h3>Medical History</h3>
+            <div class="form-group">
+                <label for="weight">Weight (in kgs.):</label>
+                <input type="number" id="weight" name="weight" placeholder="in kgs.">
+            </div>
+            
+            <div class="form-group">
+                <label for="height">Height (in cms.):</label>
+                <input type="number" id="height" name="height" placeholder="in cms.">
+            </div>
+
+            <div class="form-group">
+                <label for="allergies">Allergies (if any):</label>
+                <input type="text" id="allergies" name="allergies" list="allergiesList">
+                <datalist id="allergiesList">
+                    <option value="Pollen">
+                    <option value="Dust mites">
+                    <option value="Pet dander">
+                    <option value="Food allergies">
+                    <option value="Latex">
+                    <option value="Mold spores">
+                    <option value="Insect stings">
+                    <option value="Medications">
+                    <option value="Cockroach">
+                    <option value="Milk">
+                    <option value="Eggs">
+                    <option value="Peanuts">
+                    <option value="Tree nuts">
+                    <option value="Soy">
+                    <option value="Wheat">
+                    <option value="Fish">
+                    <option value="Shellfish">
+                    <option value="Sesame">
+                    <option value="Sulfites">
+                    <!-- Add more options as needed -->
+                </datalist>
+            </div>
+            
+            <div class="form-group">
+                <label for="medicalConditions">Existing Medical Conditions:</label>
+                <input type="text" id="medicalConditions" name="medicalConditions" list="medicalConditionsList">
+                <datalist id="medicalConditionsList">
+                    <option value="Hypertension">
+                    <option value="Diabetes">
+                    <option value="Asthma">
+                    <option value="Arthritis">
+                    <option value="Heart disease">
+                    <option value="Chronic obstructive pulmonary disease (COPD)">
+                    <option value="Depression">
+                    <option value="Anxiety disorders">
+                    <option value="Thyroid disorders">
+                    <option value="Gastroesophageal reflux disease (GERD)">
+                    <option value="Irritable bowel syndrome (IBS)">
+                    <option value="Migraine">
+                    <option value="Osteoporosis">
+                    <option value="Obesity">
+                    <option>Other:<input type="text"></option>
+                    <!-- Add more options as needed -->
+                </datalist>
+            </div>
+            
+            <div class="form-group">
+                <label for="medications">Medications Being Taken:</label>
+                <input type="text" id="medications" name="medications" list="medicationsList">
+                <datalist id="medicationsList">
+                    <option value="Aspirin">
+                    <option value="Ibuprofen">
+                    <option value="Paracetamol">
+                    <option value="Lisinopril">
+                    <option value="Metformin">
+                    <option value="Levothyroxine">
+                    <option value="Simvastatin">
+                    <option value="Atorvastatin">
+                    <option value="Amlodipine">
+                    <option value="Omeprazole">
+                    <option value="Metoprolol">
+                    <option value="Losartan">
+                    <option value="Sertraline">
+                    <option value="Escitalopram">
+                    <!-- Add more options as needed -->
+                </datalist>
+            </div>
+            
+            <div class="form-group">
+                <label for="surgeries">Previous Surgeries or Procedures:</label>
+                <input type="text" id="surgeries" name="surgeries" list="surgeriesList">
+                <datalist id="surgeriesList">
+                    <option value="Appendectomy">
+                    <option value="Cesarean Section">
+                    <option value="Gallbladder Removal">
+                    <option value="Hernia Repair">
+                    <option value="Knee Replacement">
+                    <option value="Hip Replacement">
+                    <option value="Heart Bypass Surgery">
+                    <option value="Laser Eye Surgery">
+                    <option value="Breast Biopsy">
+                    <option value="Colonoscopy">
+                    <!-- Add more options as needed -->
+                </datalist>
+            </div>
+            
+            <div class="form-group">
+                <label for="familyHistory">Family History of Health Conditions:</label>
+                <input type="text" id="familyHistory" name="familyHistory" list="familyHistorylist">
+                <datalist id="familyHistorylist">
+                    <option value="Diabetes">
+                    <option value="Hypertension">
+                    <option value="Asthma">
+                    <option value="Celiac Disease">
+                    <option value="Rheumatoid Arthritis">
+                    <option value="Osteoporosis">
+                    <option value="Multiple Sclerosis">
+                    <option value="Parkinson's Disease">
+                    <option value="Alzheimer's Disease">
+                    <option value="Bipolar Disorder">
+                    <option value="Schizophrenia">
+                    <option value="Hemophilia">
+                    <option value="Cystic Fibrosis">
+                    <option value="Muscular Dystrophy">
+                    <!-- Add more options as needed -->
+                </datalist>
+            </div>
+
+            <div class="form-group">
+                <label for="checkup">Last checkup date:</label>
+                <input type="date" id="checkup" name="checkup">
+            </div>
+            
+            <!-- Emergency Contact -->
+            <h3>Emergency Contact</h3>
+            <div class="form-group">
+                <label for="emergencyContactName">Name of Emergency Contact:</label>
+                <input type="text" id="emergencyContactName" name="emergencyContactName">
+            </div>
+            
+            <div class="form-group">
+                <label for="emergencyRelationship">Relationship to User:</label>
+                <input type="text" id="emergencyRelationship" name="emergencyRelationship">
+            </div>
+            
+            <div class="form-group">
+                <label for="emergencyContactNumber">Emergency Contact Number:</label>
+                <input type="tel" id="emergencyContactNumber" name="emergencyContactNumber" maxlength="10">
+            </div>
+            
+            <!-- Consent and Terms -->
+            <h3>Consent and Terms</h3>
+            
+                <label id="checkbox">
+                    <input type="checkbox" id="consentCheckbox" required checked>
+                    I have read and agree to the terms of service, privacy policy, and data usage policies.
+                </label>
+            
+            
+            <div class="form-group" align="center">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
